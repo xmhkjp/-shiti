@@ -1,0 +1,193 @@
+JS阶段测试
+
+一、选择题
+1、表单中的数据要提交到的处理文件由表单的（ c ）属性指定。
+	A. method     B. name    C. action    D. 以上都不对 
+
+2、在CSS样式表中，设置div层是否隐藏的属性可以是（b）.
+A.	show:none | block;
+B.	display:none | block;
+C.	display:yes | no;
+D.	show:yes | no;
+
+3、下面变量声明中哪一句是错误的? d
+A, PHP的变量命名不能以数字开始
+B，PHP的变量命名不能以特殊符号开始，但特殊符号可以插在变量名中间
+C，PHP的变量名严格区分大小写
+D，PHP的变量命名可以以下划线开始
+
+4、下面这一段为变量的引用，其正确的运行结果为?   c
+<?php
+		$a=68;
+		$b=$a;
+		
+		$a=50;
+		Echo $b;
+
+		$c=60;
+		$d=&$c;
+		$c=50;
+		Echo $d;
+	
+?>
+A.$b=68,$c=60;
+B.$b=50,$c=60;
+C.$b=68,$c=50;
+D.$b=50,$c=50;
+
+5、哪些函数与文件上传无关或是错误的? 【多选题】cd
+A,move_uploaded_file();
+B,is_uploaded_file();
+C,move_file_uploaded();
+D,move_file_uploade();
+
+6、PHP的mysql系列函数中常用的遍历数据的的函数是    a
+A，	mysql_fetch_row,mysql_fetch_assoc,mysql_affetced_rows
+B，	mysql_fecth_row,mysql_fecth_assoc,mysql_affetced_rows
+C，	Mysql_fetch_rows,mysql_fetch_array,mysql_fetch_assoc
+D，	Mysql_fecth_row,mysql_fecth_array,mysql_fecth_assoc
+
+7、下面隐藏名为mydiv的层的代码正确的是： （）c
+A. document.getElementById(mydiv).style.display="none";
+B. document.getElementById("mydiv").style.display=none;
+C. document.getElementById("mydiv").style.display="none";
+D. document.getElementById("mydiv").style.display=="none";
+
+
+8、在JavaScript表达式中13+"13"+"5"的结果是：（）
+A. 29        B. 1217        C. 126       D. 13135
+
+9、制作级联菜单功能时调用的是下拉列表框的（ b）事件。
+A  onClick
+B  onChange
+C  onmouseout
+D  onmousemove
+
+10、能够返回键盘上的按键对应字符的事件是( b )   abc
+A  onKeyDown
+B  onKeyPress
+C  onKeyUp
+D  onMouseOver
+
+11、 Window对象的常用方法中哪一个是带有提示信息、确定和取消按钮的对话框（b）
+a)	open()
+b)	confirm
+c)	alert
+d)	Comfirm
+
+12、哪一个是比较字符串的函数? d
+A. strtolen()
+B. strops();
+C. substr();
+D. strcmp();
+
+13、 如果你想要自动加载类，下面哪种函数声明是正确的
+A)  function autoload($class_name)		
+B)  function __autoload($class_name, $file)
+C)  function __autoload($class_name)		
+D)  function _autoload($class_name)
+
+14、下面的脚本运行以后，$array数组所包含的值是什么？（  ）b
+	$array  = array(‘1’,’1’);
+	foreach($array as $k=>$v){
+		$v  =  2;
+}
+A.array(‘2’,’2’)	B.array(‘1’,’1’)	C.array(2,2)		D.array(Null,Null) 
+15、执行以下代码，输入结果是(d)
+<?php
+Class a{
+	Function __construct(){
+	Echo “Echo Class a Something”;
+}
+}
+Class b extends a{
+	Function __construct(){
+	Echo “Echo Class b Something”;
+}
+}
+$a=new b();
+?>
+A、	echo class a something echo class b something
+B、	echo class b something echo class a something
+C、	echo class as something
+D、	echo class b something
+
+
+二、代码题：
+
+ 1.使用php写一段简单查询，查出所有姓名为“张三”的内容并打印出来
+库名 information
+表名User（5分）
+Name Tel Content Date
+张三 13333663366 大专毕业 2006-10-11
+张三 13612312331 本科毕业 2006-10-15
+张四 021-55665566 中专毕业 2006-10-15
+请根据上面的题目完成代码。
+
+
+2.有两张数据表，表user(id, name)记录了用户的ID和昵称，表article(id, uid,title, content, time)记录了用户发表的文章标题、内容和时间，写一个SQL语句打印出每个用户的昵称及其发表的文章总数。（5分）
+
+	
+3.检测一个变量是否有设置的函数是否?是否为空的函数是? （2分）
+
+4.使用两种以方式获取一个文件的扩展名  (10分)
+要求：dir/upload.image.jpg，找出 .jpg 或者 jpg 
+
+
+5.请写一个函数，实现以下功能：（5分）
+字符串“open_door” 转换成 “OpenDoor”
+1.字符串“open_door” 转换成 “OpenDoor”
+<?php
+
+Function zhuanhuan($data){
+$arr=explode(‘_’,$data);
+$str=’’;
+Foreach($arr as $val){
+$str.=ucfirst($val);
+}
+Return $str;
+}
+
+
+7.HTTP 状态中301 、302 、304 、403、 500、代码含义？（5分）
+
+301		指所请求的文档在别的地方；文档新的URL会在定位响应头信息中给出。浏器会自		动连接到新的URL。
+302 		重定向，新的URL会在response中的Location中返回，浏览器将会使用新的URL		发出新的Request。
+304 	 　  代表上次的文档已经被缓存了， 还可以继续使用，
+403       服务器收到请求，但是拒绝提供服务
+500       服务器发生不可预期的错误
+
+8.写出PHP(或其他语言)的public、protected、private三种访问控制模式的区别？  （ 3分）
+
+9.写出如下程序的输出结果 （5分）
+<?php 
+$count = 5; 
+function get_count(){ 
+static $count = 0; 
+return $count++; 
+} 
+echo $count; 
+++$count; 
+echo get_count(); 
+echo get_count(); 
+?> 
+5   0    1
+
+10.如果要求每隔5分钟执行一次脚本five.php，如何实现？
+可以使用js里的函数，setInterval   （5分）
+
+11.JS表单弹出对话框函数是?获得输入焦点函数是?（3分）
+
+12.写出你对json_encode和eval的理解？（5分）
+
+13.通过JS实现页面的前进和后退操作？（5分）
+<a href="javascript:history.go(-1);">后退</a>
+<a href="javascript:history.go(1);">前进</a>
+
+14.写出js的数据类型？（5分）
+
+15.DOM中常用的获取文档节点对象的三种方法。（5分）
+
+
+
+
